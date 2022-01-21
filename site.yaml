@@ -1,7 +1,8 @@
 - name: Install All Development Environment Tools
-  hosts: localhost
+  hosts: all
   roles:
   - oh-my-zsh
   - git
   - vim
   - tmux
+  - docker
