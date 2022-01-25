@@ -7,5 +7,3 @@
 - name: 'Install Oh-My-Zsh If It Does Not Exist'
   shell: 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
   when: 'zsh_dir.stat.exists == False'
-
-
