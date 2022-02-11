@@ -1,2 +1,13 @@
 ---
-# tasks file for tmux
+- name: "Install tmux"
+  apt:
+    name: "tmux"
+    state: "present"
+
+- name: "Copy tmux config file to root directory"
+  copy:
+    src: ".tmux.conf"
+    dest: "/"
+
+- name: "Apply configurations for tmux"
+  command: "tmux source ~/.tmux.conf"

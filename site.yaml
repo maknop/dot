@@ -1,5 +1,5 @@
 - name: Install All Development Environment Tools
-  hosts: all
+  hosts: localhost
   roles:
   - oh-my-zsh
   - git
