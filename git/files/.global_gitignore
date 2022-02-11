@@ -1,0 +1,16 @@
+###################################
+##       Global .gitignore       ##
+###################################
+
+# Java stuff
+*.class
+
+# OS Specific
+.DS_Store
+
+# Environments
+.env
+.venv
+
+# VS Code
+.vscode
