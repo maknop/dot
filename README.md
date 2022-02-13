@@ -12,7 +12,7 @@ My dotfiles work specifically with a MacOS  development environment
 Navigate to your root directory and copy/paste the following  
 into your favorite terminal.
 ```
-curl https://raw.githubusercontent.com/maknop/dot/main/config-dev-environment.sh | sh
+curl https://raw.githubusercontent.com/maknop/dot/main/install.sh | sh
 ```
 
 ## Vim Commands
