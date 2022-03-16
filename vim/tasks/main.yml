@@ -4,11 +4,11 @@
     path: '/etc/redhat-release'
   register: 'stat_result'
 
-- name: ' [ Ubuntu ] Install Vim If It Does Not Exist'
+- name: ' [ Ubuntu ] Install Vim'
   shell: 'sudo apt install vim'
   when: not stat_result.stat.exists
 
-- name: ' [ RHEL8 ] Install Oh-My-Zsh If It Does Not Exist'
+- name: ' [ RHEL8 ] Install Oh-My-Zsh'
   shell: 'sudo yum install zsh'
   when: stat_result.stat.exists
 
@@ -16,11 +16,13 @@
   ansible.builtin.copy:
     src: '.vimrc'
     dest: '~/'
+    mode: '0644'
 
 - name: 'Copy .vim directory to home directory'
   ansible.builtin.copy:
     src: '.vim'
     dest: '~/'
+    mode: '0644'
 
 - name: 'Apply Vim configurations'
   shell: 'source ~/.vimrc'
