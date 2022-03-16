@@ -1,2 +1,28 @@
 ---
-# tasks file for vim
+- name: '[ Vim Installation ] Check if system is RHEL8'
+  stat:
+    path: '/etc/redhat-release'
+  register: 'stat_result'
+
+- name: ' [ Ubuntu ] Install Vim If It Does Not Exist'
+  shell: 'sudo apt install vim'
+  when: not stat_result.stat.exists
+
+- name: ' [ RHEL8 ] Install Oh-My-Zsh If It Does Not Exist'
+  shell: 'sudo yum install zsh'
+  when: stat_result.stat.exists
+
+- name: 'Copy .vimrc file to home directory'
+  ansible.builtin.copy:
+    src: '.vimrc'
+    dest: '~/'
+
+- name: 'Copy .vim directory to home directory'
+  ansible.builtin.copy:
+    src: '.vim'
+    dest: '~/'
+
+- name: 'Apply Vim configurations'
+  shell: 'source ~/.vimrc'
+  args:
+     executable: '/bin/bash'
