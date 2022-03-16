@@ -12,7 +12,22 @@
 - name: ' [ Ubuntu ] Install Oh-My-Zsh If It Does Not Exist'
   shell: 'sudo apt install zsh'
   when: not stat_result.stat.exists
-  
+
 - name: ' [ RHEL8 ] Install Oh-My-Zsh If It Does Not Exist'
   shell: 'sudo yum install zsh'
   when: stat_result.stat.exists
+
+- name: 'Copy .zshrc to home directory'
+  ansible.builtin.copy:
+    src: '.zshrc'
+    dest: '~/'
+
+- name: 'Copy .zsh_aliases to home directory'
+  ansible.builtin.copy:
+    src: '.zsh_aliases'
+    dest: '~/'
+
+- name: 'Apply zsh configurations'
+  shell: 'source ~/.zshrc'
+  args:
+     executable: /bin/bash
