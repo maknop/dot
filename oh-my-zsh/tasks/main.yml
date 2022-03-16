@@ -1,5 +1,5 @@
 ---
-- name: 'Check if system is RHEL8'
+- name: '[ oh-my-zsh Installation ] Check if system is RHEL8'
   stat:
     path: '/etc/redhat-release'
   register: 'stat_result'
@@ -17,17 +17,17 @@
   shell: 'sudo yum install zsh'
   when: stat_result.stat.exists
 
-- name: 'Copy .zshrc to home directory'
+- name: 'Copy .zshrc file to home directory'
   ansible.builtin.copy:
     src: '.zshrc'
     dest: '~/'
 
-- name: 'Copy .zsh_aliases to home directory'
+- name: 'Copy .zsh_aliases file to home directory'
   ansible.builtin.copy:
     src: '.zsh_aliases'
     dest: '~/'
 
-- name: 'Apply zsh configurations'
+- name: 'Apply oh-my-zsh configurations'
   shell: 'source ~/.zshrc'
   args:
-     executable: /bin/bash
+     executable: '/bin/bash'
