@@ -9,11 +9,11 @@
     path: '/$HOME/.oh-my-zsh'
   register: 'zsh_dir'
 
-- name: ' [ Ubuntu ] Install Oh-My-Zsh If It Does Not Exist'
+- name: ' [ Ubuntu ] Install Oh-My-Zsh'
   shell: 'sudo apt install zsh'
   when: not stat_result.stat.exists
 
-- name: ' [ RHEL8 ] Install Oh-My-Zsh If It Does Not Exist'
+- name: ' [ RHEL8 ] Install Oh-My-Zsh'
   shell: 'sudo yum install zsh'
   when: stat_result.stat.exists
 
