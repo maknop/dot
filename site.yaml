@@ -2,7 +2,6 @@
   hosts: localhost
   roles:
   - oh-my-zsh
-  - git
   - vim
   - tmux
-  - docker
+  - common

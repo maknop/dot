@@ -31,6 +31,4 @@ cd ~/ansible-dot && ansible-playbook site.yaml
 printf '\nRemoved ansible-dot repository from home directory.\n'
 rm -rf ~/ansible-dot
 
-printf '\nHappy developing!!\n\n'
-
-     
+printf '\nDev environment configured, build all the things!\n\n'

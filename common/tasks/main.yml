@@ -1,0 +1,8 @@
+---
+- name: Install Git
+
+- name: Install Docker
+
+- name: Install Kubernetes
+
+
