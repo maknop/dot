@@ -1,8 +1,10 @@
 ---
 - name: Install Git
+# TODO: Install git, Ubuntu & RHEL8
 
 - name: Install Docker
+# TODO: Install docker, Ubuntu & RHEL8
 
 - name: Install Kubernetes
-
+# TODO: Install Kubernetes, Ubuntu & RHEL8
 
