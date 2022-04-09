@@ -26,7 +26,7 @@ printf '\n\nCloning ansible-dot git repository into home directory\n'
 cd ~/ && git clone https://github.com/maknop/ansible-dot.git
 
 printf '\n\nInstall ansible-playbook for dev environment.\n'
-cd ~/ansible-dot && ansible-playbook site.yaml
+cd ~/ansible-dot && ansible-playbook site.yaml --ask-become-pass
 
 printf '\nRemoved ansible-dot repository from home directory.\n'
 rm -rf ~/ansible-dot
