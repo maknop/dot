@@ -1,10 +1,40 @@
 ---
-- name: Install Git
-# TODO: Install git, Ubuntu & RHEL8
+- name: 'Golang: Remove previous version if it exists'
+  file:
+    state: 'absent'
+    path: '/usr/local/go'
+  become: yes
 
-- name: Install Docker
-# TODO: Install docker, Ubuntu & RHEL8
+- name: 'Golang: Download Golang'
+  get_url:
+    url: 'https://golang.org/dl/go1.18.linux-amd64.tar.gz'
+    dest: '/usr/local/'
+  become: yes
 
-- name: Install Kubernetes
-# TODO: Install Kubernetes, Ubuntu & RHEL8
+- name: 'Golang: Extract the archive into /usr/local'
+  unarchive:
+    src: '/usr/local/go1.18.linux-amd64.tar.gz'
+    dest: '/usr/local'
+  become: yes
 
+- name: 'Golang: Delete install file'
+  file:
+    state: 'absent'
+    path: '/usr/local/go1.18.linux-amd64.tar.gz'
+  become: yes
+  
+- name: 'Minikube: Download minikube'
+  get_url:
+    url: 'https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64'
+    dest: '/usr/local/bin'
+  become: yes
+
+- name: 'Minikube: Install minikube'
+  shell: 'install /usr/local/bin/minikube-linux-amd64 /usr/local/bin/minikube'
+  become: yes
+
+- name: 'Minikube: Delete install file'
+  file:
+    state: 'absent'
+    path: '/usr/local/bin/minikube-linux-amd64'
+  become: yes

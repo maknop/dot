@@ -1,7 +1,7 @@
-- name: Install All Development Environment Tools
-  hosts: localhost
+- name: 'Install All Development Environment Tools'
+  hosts: 'localhost'
   roles:
   - bash
-  - vim
-  - tmux
-  #- common
+  #- vim
+  #- tmux
+  - common
