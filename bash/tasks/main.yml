@@ -1,0 +1,25 @@
+---
+- name: '[ oh-my-zsh Installation ] Check if system is RHEL8'
+  stat:
+    path: '/etc/redhat-release'
+  register: 'stat_result'
+
+- name: 'Copy .bashrc file to home directory'
+  ansible.builtin.copy:
+    src: '.bashrc'
+    dest: '~/'
+
+- name: 'Copy .bash_profile file to home directory'
+  ansible.builtin.copy:
+    src: '.bash_profile'
+    dest: '~/'
+
+- name: 'Copy .bash_aliases file to home directory'
+  ansible.builtin.copy:
+    src: '.bash_aliases'
+    dest: '~/'
+
+- name: 'Apply bash configurations'
+  shell: 'source ~/.bashrc'
+  args:
+     executable: '/bin/bash'
