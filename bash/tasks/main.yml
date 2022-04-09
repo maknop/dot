@@ -1,5 +1,5 @@
 ---
-- name: '[ oh-my-zsh Installation ] Check if system is RHEL8'
+- name: 'Check if system is RHEL8'
   stat:
     path: '/etc/redhat-release'
   register: 'stat_result'
