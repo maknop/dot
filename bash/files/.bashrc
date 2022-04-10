@@ -6,16 +6,6 @@ case $- in
     *) return;;
 esac
 
-# Automatically load profile
-if [ -f ~/.bash_profile ]; then
-    . ~/.bash_profile
-fi
-
-# Automatically load aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # Path to the bash it configuration
 export BASH_IT="/home/mknop/.bash_it"
 
@@ -43,3 +33,13 @@ export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
+
+# Automatically load profile
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+fi
+
+# Automatically load aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
