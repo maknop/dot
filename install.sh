@@ -31,4 +31,6 @@ cd ~/ansible-dot && ansible-playbook site.yaml --ask-become-pass
 printf '\nRemoved ansible-dot repository from home directory.\n'
 rm -rf ~/ansible-dot
 
+source ~/.bashrc
+
 printf '\nDev environment configured, build all the things!\n\n'
