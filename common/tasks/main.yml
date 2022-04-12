@@ -1,4 +1,12 @@
 ---
+- name: 'bash-it: Download git repo'
+  git:
+    repo: 'https://github.com/Bash-it/bash-it.git'
+    dest: '~/'
+
+- name: 'bash-it: Install'
+  shell: yes | ~/.bash_it/install.sh
+
 - name: 'Golang: Remove previous version if it exists'
   file:
     state: 'absent'
