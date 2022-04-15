@@ -4,20 +4,29 @@
     path: '/etc/redhat-release'
   register: 'stat_result'
 
+- name: 'bash-it: Download git repo'
+  git:
+    repo: 'https://github.com/Bash-it/bash-it.git'
+    dest: '~/.bash_it'
+
+- name: 'bash-it: Install'
+  shell: yes | ~/.bash_it/install.sh
+
+
 - name: 'Copy .bashrc file to home directory'
   ansible.builtin.copy:
     src: '.bashrc'
-    dest: '~/'
+    dest: '~/.bashrc'
 
 - name: 'Copy .bash_profile file to home directory'
   ansible.builtin.copy:
     src: '.bash_profile'
-    dest: '~/'
+    dest: '~/.bash_profile'
 
 - name: 'Copy .bash_aliases file to home directory'
   ansible.builtin.copy:
     src: '.bash_aliases'
-    dest: '~/'
+    dest: '~/.bash_aliases'
 
 - name: 'Apply bash configurations'
   shell: 'source ~/.bashrc'

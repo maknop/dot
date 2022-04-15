@@ -36,10 +36,10 @@ source "$BASH_IT"/bash_it.sh
 
 # Automatically load profile
 if [ -f ~/.bash_profile ]; then
-    . ~/.bash_profile
+    source ~/.bash_profile
 fi
 
 # Automatically load aliases
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
