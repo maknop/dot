@@ -2,6 +2,6 @@
   hosts: 'localhost'
   roles:
   - bash
-  #- vim
+  - vim
   #- tmux
   - common
