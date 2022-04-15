@@ -31,6 +31,7 @@ cd ~/ansible-dot && ansible-playbook site.yaml --ask-become-pass
 printf '\nRemoved ansible-dot repository from home directory.\n'
 rm -rf ~/ansible-dot
 
-source ~/.bashrc
+# Vundle - Install all Vim packages
+vim -c 'PluginInstall' -c 'qa!'
 
 printf '\nDev environment configured, build all the things!\n\n'
