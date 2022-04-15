@@ -79,7 +79,6 @@ set scrolloff=5
 set showmode                    " Displays current mode
 set ruler                       " Shows line and column of position
 set number                  
-set relativenumber              " Show line number relative to current line
 set backspace=indent,eol,start
 set noswapfile                  " Disables swap files
 

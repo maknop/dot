@@ -1,16 +1,13 @@
 ---
-- name: '[ Vim Installation ] Check if system is RHEL8'
-  stat:
-    path: '/etc/redhat-release'
-  register: 'stat_result'
+- name: '[ Fedora ] Install Vim'
+  dnf: 
+    name: 'vim'
+  become: yes
 
-- name: ' [ Ubuntu ] Install Vim'
-  shell: 'sudo apt install vim'
-  when: not stat_result.stat.exists
-
-- name: ' [ RHEL8 ] Install Oh-My-Zsh'
-  shell: 'sudo yum install zsh'
-  when: stat_result.stat.exists
+- name: 'Clone Vundle Vim package manager'
+  git:
+    repo: 'https://github.com/VundleVim/Vundle.vim.git'
+    dest: '~/.vim/bundle/Vundle.vim'
 
 - name: 'Copy .vimrc file to home directory'
   ansible.builtin.copy:
@@ -23,8 +20,3 @@
     src: '.vim'
     dest: '~/'
     mode: '0644'
-
-- name: 'Apply Vim configurations'
-  shell: 'source ~/.vimrc'
-  args:
-     executable: '/bin/bash'
