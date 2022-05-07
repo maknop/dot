@@ -1,13 +1,11 @@
 ---
 - name: "Install tmux"
-  apt:
+  dnf:
     name: "tmux"
     state: "present"
+  become: yes
 
 - name: "Copy tmux config file to root directory"
   copy:
     src: ".tmux.conf"
-    dest: "/"
-
-- name: "Apply configurations for tmux"
-  command: "tmux source ~/.tmux.conf"
+    dest: "~/"

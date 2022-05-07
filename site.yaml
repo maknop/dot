@@ -3,5 +3,5 @@
   roles:
   - bash
   - vim
-  #- tmux
+  - tmux
   - common
