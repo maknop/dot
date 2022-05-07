@@ -16,23 +16,23 @@ curl https://raw.githubusercontent.com/maknop/ansible-dot/main/install.sh | sh
 ```
 
 ## Vim Commands
-```
-i                 insert mode
-jk                Exit insert mode
-h, j, k, l        Left, down, up, right
-e                 Move forward by a word
-w                 Move back by a word
-yy                Copies line to buffer
-dd                Deletes line, stores line in buffer
-p                 Pastes contents stored in the buffer
-shift + v         Visual mode, highlights entire line
-v                 Visual mode, highlights single character
-```
+| Keyboard Command | Description                               |  
+|------------------|-------------------------------------------|  
+| i                | insert mode                               |  
+| jk               | Exit insert mode                          |  
+| h, j, k, l       | Left, down, up, right (Respectively)      |  
+| e                | Move forward by a word                    |  
+| w                | Move back by a word                       |  
+| yy               | Copies line to buffer                     |  
+| dd               | Deletes line, stores line in buffer       |  
+| p                | Pastes contents stored in the buffer      |  
+| shift + v        | Visual mode, highlights entire line       |  
+| v                | Visual mode, highlights single character  |  
 
 ## Tmux Commands
-```
-ts <name>         Create a tmux session
-ta <name>         Reattaches to a previous tmux session
-tk <name>         Kills tmux session
-tl                Lists all current tmux sessions
-```
+| Keyboard Command | Description                               |  
+|------------------|-------------------------------------------|  
+| ts <name>        | Create a tmux session                     |  
+| ta <name>        | Reattaches to a previous tmux session     |  
+| tk <name>        | Kills tmux session                        |  
+| tl               | Lists all current tmux sessions           |  
