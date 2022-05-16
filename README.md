@@ -32,6 +32,11 @@ curl https://raw.githubusercontent.com/maknop/ansible-dot/main/install.sh | sh
 ## Tmux Commands
 | Keyboard Command | Description                               |  
 |------------------|-------------------------------------------|  
+| ctrl-a           | Redefined prefix command                  |  
+| ctrl-a -         | Vertical window                           |  
+| ctrl-a =         | Horizontal window                         |  
+| ctrl-a \[         | Enters copy mode                          |  
+| ctrl-a ]         | Paste copied text                         |
 | ts <name>        | Create a tmux session                     |  
 | ta <name>        | Reattaches to a previous tmux session     |  
 | tk <name>        | Kills tmux session                        |  
