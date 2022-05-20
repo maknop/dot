@@ -9,7 +9,7 @@ printf   '#######################################################'
 printf '\n\nChecking if pip is installed.\n'
 if  ! command -v pip &> /dev/null
 then
-    dnf install python3-pip
+    sudo dnf install python3-pip
 else
     printf 'pip is already installed.\n'
 fi
