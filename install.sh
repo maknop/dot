@@ -9,7 +9,7 @@ printf   '#######################################################'
 printf '\n\nChecking if pip is installed.\n'
 if  ! command -v pip &> /dev/null
 then
-    sudo dnf install python3-pip
+    sudo dnf install python3-pip -y
 else
     printf 'pip is already installed.\n'
 fi
@@ -17,7 +17,7 @@ fi
 printf '\nChecking if Ansible is installed.\n'
 if ! command -v ansible-playbook &> /dev/null
 then
-    sudo -H pip install ansible
+    sudo dnf install ansible
 else
     printf 'Ansible is already installed.\n'
 fi
