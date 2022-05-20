@@ -17,7 +17,7 @@ fi
 printf '\nChecking if Ansible is installed.\n'
 if ! command -v ansible-playbook &> /dev/null
 then
-    sudo -H pip3 install ansible
+    sudo -H pip install ansible
 else
     printf 'Ansible is already installed.\n'
 fi
