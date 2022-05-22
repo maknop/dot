@@ -32,6 +32,6 @@ printf '\nRemoved ansible-dot repository from home directory.\n'
 rm -rf ~/ansible-dot
 
 # Vundle - Install all Vim packages
-vim -c 'PluginInstall' -c 'qa!'
+vim +PluginInstall +qal
 
 printf '\nDev environment configured, build all the things!\n\n'
