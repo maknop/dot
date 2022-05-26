@@ -1,5 +1,5 @@
 #!/bin/bash
-DOTFILES_DIR=$(pwd -P "dot")
+DOTFILES_DIR=$(pwd -P "dotfiles")
 echo ${DOTFILES_DIR}
 
 # Install Nix if it does not exist
