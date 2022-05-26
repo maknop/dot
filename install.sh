@@ -1,5 +1,5 @@
 #!/bin/bash
-DOTFILES_DIR=$(pwd -P "dotfiles")
+DOTFILES_DIR=$(pwd -P "dot")
 echo ${DOTFILES_DIR}
 
 # Install Nix if it does not exist
@@ -9,7 +9,7 @@ if [[ ! -d "$HOME/.nix-profile" ]]; then
 fi
 
 # # Symlink files to home directory
-ln -s ${DOTFILES_DIR}/dot/. $HOME/
+ln -s ${DOTFILES_DIR}/dotfiles/. $HOME/
 
 # Install oh-my-zsh if it does not exist
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
