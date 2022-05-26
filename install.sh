@@ -1,37 +1,18 @@
 #!/bin/bash
+DOTFILES_DIR=$(pwd -P "dot")
+echo ${DOTFILES_DIR}
 
-printf '\n#######################################################\n'
-printf   '##                                                   ##\n'
-printf   '##           Installing Dev Environment              ##\n'
-printf   '##                                                   ##\n'
-printf   '#######################################################'
-
-printf '\n\nChecking if pip is installed.\n'
-if  ! command -v pip &> /dev/null
-then
-    sudo dnf install python3 -y
-else
-    printf 'pip is already installed.\n'
+# Install Nix if it does not exist
+if [[ ! -d "$HOME/.nix-profile" ]]; then
+    echo "Installing Nix"
+    curl -L https://nixos.org/nix/install | sh
 fi
 
-printf '\nChecking if Ansible is installed.\n'
-if ! command -v ansible-playbook &> /dev/null
-then
-    sudo dnf install ansible -y
-else
-    printf 'Ansible is already installed.\n'
+# # Symlink files to home directory
+ln -s ${DOTFILES_DIR}/dot/. $HOME/
+
+# Install oh-my-zsh if it does not exist
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+    echo "Installing oh-my-zsh"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 fi
-
-printf '\n\nCloning ansible-dot git repository into home directory\n'
-cd ~/ && git clone https://github.com/maknop/ansible-dot.git
-
-printf '\n\nInstall ansible-playbook for dev environment.\n'
-cd ~/ansible-dot && ansible-playbook site.yaml --ask-become-pass
-
-printf '\nRemoved ansible-dot repository from home directory.\n'
-rm -rf ~/ansible-dot
-
-# Vundle - Install all Vim packages
-vim +PluginInstall +qal
-
-printf '\nDev environment configured, build all the things!\n\n'
