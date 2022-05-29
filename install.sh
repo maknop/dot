@@ -12,7 +12,7 @@ fi
 SYMLINK_LOCATION=$HOME
 if [ ! -e $SYMLINK_LOCATION ]; then
     echo "Symlinking files to home directory"
-    ln -s ${DOTFILES_DIR}/files/. $HOME/
+    ln -s ${DOTFILES_DIR}/files/.[!.]* $HOME
 fi
 
 OMF_INSTALL_LOCATION=$HOME/.local/share/omf
