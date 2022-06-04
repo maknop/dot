@@ -1,6 +1,5 @@
 #!/bin/sh
 DOTFILES_DIR=$(pwd -P "dot")
-ZSH_DIR="$HOME/.oh-my-zsh"
 
 echo ${DOTFILES_DIR}
 
@@ -18,7 +17,7 @@ if [ ! -e $SYMLINK_LOCATION ]; then
 fi
 
 
-if [[ ! -d ZSH_DIR ]]; then
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     echo "Installing oh-my-zsh"
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc 
 
