@@ -1,5 +1,7 @@
 #!/bin/sh
 DOTFILES_DIR=$(pwd -P "dot")
+ZSH_DIR="$HOME/.oh-my-zsh"
+
 echo ${DOTFILES_DIR}
 
 if [[ ! -d "$HOME/.nix-profile" ]]; then
@@ -13,6 +15,18 @@ SYMLINK_LOCATION=$HOME
 if [ ! -e $SYMLINK_LOCATION ]; then
     echo "Symlinking files to home directory"
     ln -s ${DOTFILES_DIR}/files/.[!.]* $HOME
+fi
+
+
+if [[ ! -d ZSH_DIR ]]; then
+    echo "Installing oh-my-zsh"
+
+    curl -L https://raw.githubusercontent.com/mriedmann/oh-my-zsh/master/tools/install.sh | sh
+    
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc 
+
+    echo "Making zsh the default shell"
+    chsh -s /usr/bin/zsh
 fi
 
 OMF_INSTALL_LOCATION=$HOME/.local/share/omf
