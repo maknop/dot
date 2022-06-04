@@ -20,9 +20,6 @@ fi
 
 if [[ ! -d ZSH_DIR ]]; then
     echo "Installing oh-my-zsh"
-
-    curl -L https://raw.githubusercontent.com/mriedmann/oh-my-zsh/master/tools/install.sh | sh
-    
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc 
 
     echo "Making zsh the default shell"
@@ -33,9 +30,9 @@ OMF_INSTALL_LOCATION=$HOME/.local/share/omf
 if [[ ! -d $OMF_INSTALL_LOCATION ]]; then
     echo "Install oh-my-fish"
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-fi
 
-echo "Installing oh-my-fish theme(s)"
-fish -c "omf install ays 2> /dev/null"
+    echo "Installing oh-my-fish theme(s)"
+    fish -c "omf install ays 2> /dev/null"
+fi
 
 echo "Finished!"
