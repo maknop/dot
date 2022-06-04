@@ -14,7 +14,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'Rigellute/rigel'
-Plugin 'sainnhe/everforest'
 
 " NERDTree -- File browser in vim
 Plugin 'scrooloose/nerdtree'
@@ -168,19 +167,8 @@ if exists('+termguicolors')
 endif
 
 set background=dark
-let g:everforest_background = 'hard'
 
-colorscheme everforest
-let g:airline_theme = 'everforest'
-let g:everforest_italic_comment = 1
-let g:everforest_better_performance = 1
-
-"let g:gruvbox_contrast_dark="hard"
-"colorscheme gruvbox
-"let g:airline_theme = 'gruvbox'
-
-"let g:javascript_plugin_flow = 1
-"colorscheme rigel
-"let g:rigel_airline = 1
-"let g:airline_theme = 'rigel'
+let g:gruvbox_contrast_dark="hard"
+colorscheme gruvbox
+let g:airline_theme = 'gruvbox'
 
