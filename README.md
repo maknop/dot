@@ -27,7 +27,9 @@ curl https://raw.githubusercontent.com/maknop/dot/main/install.sh | sh
 | dd               | Deletes line, stores line in buffer       |  
 | p                | Pastes contents stored in the buffer      |  
 | shift + v        | Visual mode, highlights entire line       |  
-| v                | Visual mode, highlights single character  |  
+| v                | Visual mode, highlights single character  | 
+| ctrl + p         | Fuzzy finder                              |  
+| ctrl + n         | Open Nerdtree                             |
 
 ## Tmux Commands
 | Keyboard Command | Description                               |  
