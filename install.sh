@@ -25,13 +25,4 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     chsh -s /usr/bin/zsh
 fi
 
-OMF_INSTALL_LOCATION=$HOME/.local/share/omf
-if [[ ! -d $OMF_INSTALL_LOCATION ]]; then
-    echo "Install oh-my-fish"
-    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-
-    echo "Installing oh-my-fish theme(s)"
-    fish -c "omf install ays 2> /dev/null"
-fi
-
 echo "Finished!"
