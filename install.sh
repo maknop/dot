@@ -22,7 +22,7 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc 
 
     echo "Making zsh the default shell"
-    chsh -s /usr/bin/zsh
+    chsh -s $(which zsh)
 fi
 
 echo "Finished!"
